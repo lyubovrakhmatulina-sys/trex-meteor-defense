@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#111b3a" />
+  <meta name="description" content="Defend your T-Rex from a meteor shower. Tap meteors, build your combo, and beat your best score!" />
+  <title>T-Rex Meteor Defense</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell" aria-label="T-Rex Meteor Defense game">
+    <canvas id="game" aria-label="Tap the falling meteors to protect the dinosaur"></canvas>
+
+    <header class="hud" aria-live="polite">
+      <div class="score-card"><span class="eyebrow">SCORE</span><strong id="score">0</strong></div>
+      <div class="lives" id="lives" aria-label="3 lives">❤️ ❤️ ❤️</div>
+      <button class="sound-button" id="sound" aria-label="Turn sound off" title="Sound on">♫</button>
+      <div class="combo-card" id="combo"><span class="eyebrow">COMBO</span><strong id="combo-value">×0</strong></div>
+    </header>
+
+    <section class="overlay" id="start-screen" aria-labelledby="title">
+      <div class="panel intro-panel">
+        <div class="sticker">☄️</div>
+        <p class="kicker">A COSMIC ARCADE ADVENTURE</p>
+        <h1 id="title">T-REX<br><span>METEOR</span><br>DEFENSE</h1>
+        <div class="hero-dino" aria-hidden="true">🦖<span>RRR</span></div>
+        <p class="instruction">TAP THE METEORS!</p>
+        <button class="primary-button" id="play">LET'S PLAY <span>➜</span></button>
+        <p class="best-line">YOUR BEST <strong id="start-best">0</strong></p>
+      </div>
+    </section>
+
+    <section class="overlay hidden" id="game-over" aria-labelledby="over-title">
+      <div class="panel over-panel">
+        <div class="game-over-icon">💫</div>
+        <p class="kicker">NICE TRY, SPACE RANGER!</p>
+        <h2 id="over-title">GAME<br><span>OVER</span></h2>
+        <div class="result-row"><span>SCORE</span><strong id="final-score">0</strong></div>
+        <div class="result-row best-result"><span>✦ BEST ✦</span><strong id="final-best">0</strong></div>
+        <button class="primary-button" id="again">PLAY AGAIN <span>➜</span></button>
+        <p class="instruction">The dino believes in you!</p>
+      </div>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
+
